@@ -15,12 +15,12 @@
 
 @font-face {
     font-family: mainFont;
-    src: url(/Fonts/Aventura-Bold.otf);
+    src: url(/public/fonts/Aventura-Bold.otf);
 }
 
 @font-face {
     font-family: logoFont;
-    src: url(/Fonts/Shopping\ Script\ Demo.ttf);
+    src: url(/public/fonts/shopping.ttf);
 }
 
 body {
