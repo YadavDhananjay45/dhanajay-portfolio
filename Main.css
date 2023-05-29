@@ -1,0 +1,286 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'mainFont';
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #a4d8d8;
+    --secondary-color: #0085ff;
+    --font-color: #ecedef;
+    --cursor-trail-color: var(--secondary-color);
+}
+
+@font-face {
+    font-family: mainFont;
+    src: url(/Fonts/Aventura-Bold.otf);
+}
+
+@font-face {
+    font-family: logoFont;
+    src: url(/Fonts/Shopping\ Script\ Demo.ttf);
+}
+
+body {
+    height: 100vh;
+    background-color: #090e1a;
+}
+
+.logo {
+    font-family: 'logoFont';
+    font-weight: 600;
+    font-size: 5vw;
+    margin-left: 2%;
+    color: var(--secondary-color);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    z-index: 10;
+}
+
+nav ul {
+    margin: 1.5rem 0rem;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+}
+
+nav ul li a {
+    padding: 0px 2rem;
+    font-size: 1.2rem;
+    color: var(--font-color);
+    text-decoration: none;
+    /* font-weight: 300; */
+    position: relative;
+    transition: 1s;
+}
+
+nav ul li a:hover {
+    color: #0579e6;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+}
+
+.greeting {
+    color: var(--font-color);
+    font-size: 6rem;
+    margin-top: 5%;
+    margin-left: 3%;
+    font-weight: 600;
+}
+
+.white {
+    color: var(--secondary-color);
+}
+
+.main-name {
+    /* font-family: 'blanka', sans-serif; */
+    margin-left: 3%;
+    font-weight: 600;
+    color: var(--font-color);
+    font-size: 6rem;
+    letter-spacing: .3rem;
+}
+
+.profession-text {
+    color: var(--font-color);
+    margin-left: 3%;
+    font-size: 4rem;
+}
+
+.memoji {
+    display: flex;
+    justify-content: flex-start;
+    padding: 0rem 5rem;
+}
+
+.memoji img {
+    width: 25vw;
+}
+
+.avatar {
+    animation: floating;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-delay: 2s;
+}
+
+@keyframes floating {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(0, 10vh);
+    }
+
+    100% {
+        transform: translate(0, -0vh);
+    }
+}
+
+canvas {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+@media screen and (max-width:640px) {
+    nav {
+        flex-direction: column;
+    }
+
+    nav ul {
+        display: flex;
+    }
+
+    nav ul li a {
+        padding: 4.7vw;
+        font-size: 3.2vw;
+    }
+
+    .logo {
+        font-size: 15vw;
+        padding: 0rem 5vw;
+        text-align: center;
+    }
+
+    .hero {
+        flex-direction: column-reverse;
+        padding: 2rem;
+    }
+
+    .memoji {
+        display: flex;
+        justify-content: center;
+    }
+
+    .memoji img {
+        width: 50vw;
+    }
+
+    .left-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 9vw;
+    }
+
+    .greeting {
+        font-size: 2rem;
+    }
+
+    .main-name {
+        font-size: 2rem;
+    }
+
+    .profession-text {
+        font-size: 2rem;
+    }
+
+}
+
+@media screen and (min-width:641px) and (max-width:900px) {
+    nav {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    nav ul {
+        display: flex;
+        margin-top: 4vw;
+    }
+
+    nav ul li a {
+        padding: 0vw 3vw;
+        font-size: 2vw;
+    }
+
+    .logo {
+        padding: 3vw;
+        font-size: 5vw;
+    }
+
+    .hero {
+        margin-top: 14vw;
+        /* justify-content: space-around; */
+    }
+
+
+    .left-text {
+        margin-left: 2vw;
+    }
+
+    .greeting {
+        font-size: 6vw;
+    }
+
+    .main-name {
+        font-size: 6vw;
+    }
+
+    .profession-text {
+        font-size: 5vw;
+    }
+}
+
+@media screen and (min-width:901px) and (max-width:1200px) {
+    nav {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .logo {
+        margin-top: 1vw;
+    }
+
+    .left-text {
+        margin-left: 2vw;
+    }
+
+    .greeting {
+        font-size: 6vw;
+    }
+
+    .main-name {
+        font-size: 6vw;
+    }
+
+    .profession-text {
+        font-size: 6vw;
+    }
+
+    .hero {
+        margin-top: 10vw;
+    }
+}
+
+@media screen and (min-width:1201px) and (max-width:1500px) {
+    .logo {
+        padding: .3vw 0vw;
+    }
+
+    nav ul {
+        margin-top: 2vw;
+    }
+
+    .memoji img {
+        width: 30vw;
+        /* padding: 5vw; */
+    }
+
+    .hero {
+        margin-top: 10vw;
+    }
+}
