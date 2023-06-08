@@ -12,34 +12,44 @@
   <body>
     <div class="container">
       <canvas id="trail"></canvas>
-      <nav>
-        <div class="logo">Dhananjay</div>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Skills</a></li>
-          <li><a href="#">Projects</a></li>
-          <li><a href="#">Resume</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </nav>
-      <div class="hero">
-        <div class="left-text">
-          <div class="greeting" id="greets"></div>
-          <div class="main-name"><span class="white">I'M</span>DHANANJAY</div>
-          <div class="profession-container">
-            <div class="profession-text" id="prof-text"></div>
+      <header>
+        <nav class="navbar">
+          <div class="logo">Dhananjay</div>
+          <ul class="nav-menu" id="mobile-menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Skills</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Resume</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+          <button type="button" class="bars" id="menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </nav>
+      </header>
+      <main>
+        <div class="hero">
+          <div class="left-text">
+            <div class="greeting" id="greets"></div>
+            <div class="main-name"><span class="white">I'M</span>DHANANJAY</div>
+            <div class="profession-container">
+              <div class="profession-text" id="prof-text"></div>
+            </div>
+          </div>
+          <div class="memoji">
+            <img
+              src="/public/image/my_project.png"
+              class="avatar"
+              alt="Loading..."
+            />
           </div>
         </div>
-        <div class="memoji">
-          <img
-            src="/public/image/my_project.png"
-            class="avatar"
-            alt="Loading..."
-          />
-        </div>
-      </div>
+      </main>
     </div>
     <script src="matrixAnimation.js"></script>
     <script src="cursorTrail.js"></script>
+    <script src="hambuger.js"></script>
   </body>
 </html>
