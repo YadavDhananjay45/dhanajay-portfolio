@@ -1,0 +1,76 @@
+@media screen and (min-width: 700px) {
+  .bars {
+    display: none;
+  }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 1rem;
+    /* padding: 0 2rem; */
+  }
+  .nav-menu {
+    position: unset;
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    width: auto;
+    padding: 0 1rem;
+  }
+  ul li :hover {
+    color: var(--primary-200);
+  }
+  ul li a {
+    font-size: 1.3rem;
+    text-decoration: none;
+  }
+  .left-text {
+    font-size: 3rem;
+  }
+}
+@media screen and (min-width: 850px) {
+  .nav-menu {
+    /* padding: 0 1rem; */
+  }
+  ul li {
+    margin: 0 0.8rem;
+  }
+  .hero {
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  .left-text {
+    font-size: 3rem;
+    align-items: flex-start;
+  }
+  .avatar {
+    width: 40vw;
+  }
+  .about-container {
+    padding: 1rem;
+    flex-direction: row;
+  }
+  .line {
+    width: 4px;
+    height: 10rem;
+  }
+  .about-avatar {
+    margin-right: 1rem;
+  }
+  .about-img {
+    width: 30vw;
+  }
+  .about-text {
+    margin-left: 0.5rem;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .left-text {
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 6rem;
+  }
+  .avatar {
+    width: 35vw;
+  }
+}

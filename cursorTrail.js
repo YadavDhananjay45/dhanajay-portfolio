@@ -140,7 +140,7 @@ function onMouseMove(e) {
 }
 
 function resizeCanvas() {
-  ctx.canvas.width = window.innerWidth - 24;
+  ctx.canvas.width = window.innerWidth;
   ctx.canvas.height = window.innerHeight;
 }
 

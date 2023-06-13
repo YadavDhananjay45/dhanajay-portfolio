@@ -4,7 +4,7 @@ const loader = document.getElementById("greets");
 
 const randomText = "abcdefghijklmnopqrstuvwxyz".toUpperCase();
 
-const words = ["DEVELOPER", "PROGRAMMER", "READER", "STUDENT"];
+const words = ["DEVELOPER", "PROGRAMMER", "READER", "FRESHER"];
 
 const loaderWords = ["HELLO", "HALO", "नमस्ते", "GUTEN TAG", "BONJOUR"];
 
