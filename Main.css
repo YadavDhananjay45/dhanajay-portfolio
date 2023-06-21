@@ -13,12 +13,11 @@
   font-family: "mainFont";
   scroll-behavior: smooth;
   box-sizing: border-box;
-  /* outline: 1px solid rgba(255, 0, 0, 0.2); */
 }
 
 :root {
   --primary-100: #0085ff;
-  --primary-200: #69b4ff;
+  --primary-200: #6bb5ff;
   --primary-300: #e0ffff;
   --accent-100: #006fff;
   --accent-200: #e1ffff;
@@ -27,37 +26,41 @@
   --bg-100: #090e1a;
   --bg-200: #1e1e29;
   --bg-300: #303540;
-  --cursor-trail-color: var(--primary-200);
 }
 body {
   user-select: none;
-  height: 100vh;
   background-color: #090e1a;
 }
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow-x: hidden;
+}
 canvas {
-  position: absolute;
+  position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 999;
 }
-header {
-  /* width: 100vw; */
-}
 .logo {
   cursor: pointer;
   user-select: none;
-  color: var(--primary-100);
+  background-image: linear-gradient(to right, #0acffe 0%, #495aff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-size: 3rem;
   font-family: logoFont;
   font-weight: 1000;
   margin: 0.8rem 1.3rem;
 }
 .navbar {
+  overflow-x: hidden;
   display: flex;
   justify-content: space-between;
 }
 .nav-menu {
-  /* From https://css.glass */
   background: rgba(9, 14, 26, 0.61);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -65,7 +68,6 @@ header {
   -webkit-backdrop-filter: blur(6.3px);
   border: 1px solid rgba(9, 14, 26, 0.08);
   height: 100vh;
-  width: 100%;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -102,20 +104,22 @@ ul li a {
   background-color: white;
   margin-top: 3px;
   border-radius: 3px;
+  transition: all 0.7s;
 }
 .bars > span:nth-child(1).active {
-  transform: translateY(6px) rotate(45deg);
+  transform: translateY(6px) rotate(405deg);
 }
 .bars > span:nth-child(2).active {
   opacity: 0%;
 }
 .bars > span:nth-child(3).active {
-  transform: translateY(-6px) rotate(-45deg);
+  transform: translateY(-6px) rotate(-405deg);
 }
 .nav-menu.active {
   top: 0px;
 }
 .hero {
+  min-height: 100vh;
   padding: 2rem;
   display: flex;
   flex-direction: column-reverse;
@@ -134,7 +138,12 @@ ul li a {
   font-size: 2rem;
 }
 .white {
-  color: var(--primary-100);
+  color: var(--text-100);
+}
+.dj {
+  background-image: linear-gradient(to right, #0acffe 0%, #495aff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .avatar {
   width: 60vw;
@@ -160,9 +169,11 @@ ul li a {
 
 .about-section {
   display: flex;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
   min-height: 100vh;
+  width: 95%;
 }
 .about-container {
   display: flex;
@@ -171,7 +182,9 @@ ul li a {
   text-align: center;
 }
 .about-me {
-  color: var(--primary-100);
+  background-image: linear-gradient(to right, #0acffe 0%, #495aff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-weight: 600;
   font-size: 3rem;
 }
@@ -190,7 +203,6 @@ ul li a {
   border-radius: 10px;
 }
 .about-text {
-  width: 95%;
   background-color: var(--bg-200);
   margin-top: 1rem;
   padding: 0.5rem;
@@ -207,7 +219,9 @@ ul li a {
 .edu-header {
   text-align: center;
   font-size: 3rem;
-  color: var(--primary-100);
+  background-image: linear-gradient(to right, #0acffe 0%, #495aff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .eng {
   display: flex;
@@ -292,8 +306,31 @@ ul li a {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
   color: var(--text-100);
+  border-radius: 10px;
+  gap: 0.5rem;
+  /* background-color: var(--bg-200); */
+  margin: 0.5rem 0;
+  padding: 0 1rem;
+}
+.skill-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  text-align: left;
+}
+.main-skill {
+  background-image: linear-gradient(to right, #0acffe 0%, #495aff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+.info-skill {
+  color: var(--text-100);
+  font-weight: 700;
 }
 .html {
   display: flex;
@@ -366,104 +403,214 @@ ul li a {
   width: 5rem;
 }
 .html-img {
-  width: 12vw;
+  width: 3.5rem;
 }
 .html-img:hover {
   transform: scale(1.2, 1.2);
 }
 .css-img {
   margin-top: -0.3rem;
-  width: 14vw;
+  width: 3.8rem;
 }
 .css-img:hover {
-  transform: scale(1.4, 1.4);
+  transform: scale(1.3, 1.3);
 }
 .js-img {
   margin-top: -0.6rem;
-  width: 10vw;
+  width: 2.8rem;
 }
 .js-img:hover {
   transform: scale(1.2, 1.2);
 }
 .py-img {
-  width: 10vw;
+  width: 3rem;
 }
 .py-img:hover {
   transform: scale(1.2, 1.2);
 }
 .bt-img {
-  width: 10vw;
+  width: 3rem;
 }
 .bt-img:hover {
   transform: scale(1.5, 1.5);
 }
 .sql-img {
-  width: 10vw;
+  width: 3rem;
 }
 .sql-img:hover {
   transform: scale(1.2, 1.2);
 }
 .git-img {
-  width: 10vw;
+  width: 3rem;
 }
 .git-img:hover {
-  transform: scale(1.5, 1.5);
+  transform: scale(1.1, 1.1);
 }
 .img-text1 {
-  display: none;
+  margin-top: 0.1rem;
   font-size: 0.5rem;
   transition: all 1s;
 }
 .img-text2 {
-  display: none;
-  margin-top: 0.5rem;
+  margin-top: 0.2rem;
   font-size: 0.5rem;
   transition: all 1s;
 }
 .img-text3 {
-  display: none;
   margin-top: 0.4rem;
   font-size: 0.5rem;
   transition: all 1s;
 }
 .img-text4 {
-  display: none;
+  margin-top: 0.2rem;
   font-size: 0.5rem;
   transition: all 1s;
 }
 .img-text5 {
-  display: none;
+  margin-top: 0.3rem;
   font-size: 0.5rem;
   transition: all 1s;
 }
 .img-text6 {
-  display: none;
+  margin-top: 0.5rem;
   font-size: 0.5rem;
   transition: all 1s;
 }
 .img-text7 {
-  display: none;
+  margin-top: 0.5rem;
   font-size: 0.5rem;
   transition: all 1s;
 }
-.img-text1.active {
-  display: block;
+.skill-box {
+  margin: 1rem 0;
 }
-.img-text2.active {
-  display: block;
+.react {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-200);
+  border-radius: 50%;
+  height: 5rem;
+  width: 5rem;
 }
-.img-text3.active {
-  display: block;
+.react-img {
+  width: 3rem;
 }
-.img-text4.active {
-  display: block;
+.react-img:hover {
+  transform: scale(1.5, 1.5);
 }
-.img-text5.active {
-  display: block;
+
+.img-text8 {
+  margin-top: 0.3rem;
+  font-size: 0.5rem;
+  color: var(--text-100);
 }
-.img-text6.active {
-  display: block;
+.tailwind {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-200);
+  border-radius: 50%;
+  height: 5rem;
+  width: 5rem;
 }
-.img-text7.active {
-  display: block;
+.tw-img {
+  width: 3rem;
+}
+.tw-img:hover {
+  transform: scale(1.5, 1.5);
+}
+.img-text9 {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-size: 0.5rem;
+  color: var(--text-100);
+}
+.project-text {
+  text-align: center;
+  margin: 1rem 0;
+}
+.project-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.project1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  background-color: var(--bg-200);
+  padding: 2rem;
+  gap: 1rem;
+  width: 95%;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+.project1::before {
+  content: "";
+  height: 100rem;
+  width: 5rem;
+  background-image: linear-gradient(
+    90.1deg,
+    rgba(84, 212, 228, 1) 0.2%,
+    rgba(68, 36, 164, 1) 99.9%
+  );
+  animation: rouBorder 5s linear infinite;
+  transition: all 0.2s linear;
+  position: absolute;
+}
+@keyframes rouBorder {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+.project1::after {
+  content: "";
+  inset: 3px;
+  background-color: var(--bg-200);
+  border-radius: 10px;
+  position: absolute;
+}
+.p1image-box {
+  z-index: 1;
+}
+.p1image {
+  width: 60vw;
+  z-index: 1;
+  border: 1px solid #006fff;
+  border-radius: 5px;
+}
+.p1tags {
+  z-index: 1;
+}
+.p1tags > span {
+  background-image: linear-gradient(to right, #0acffe 0%, #495aff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border: 1px solid #006fff;
+  border-radius: 10px;
+  font-size: 0.6rem;
+  z-index: 1;
+}
+.p1text {
+  color: var(--text-100);
+  font-size: 0.8rem;
+  z-index: 1;
+}
+.p1name {
+  background-image: linear-gradient(to right, #0acffe 0%, #495aff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  z-index: 1;
 }

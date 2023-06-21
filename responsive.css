@@ -6,7 +6,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 1rem;
+    /* margin: 0 1rem; */
     /* padding: 0 2rem; */
   }
   .nav-menu {
@@ -27,11 +27,21 @@
   .left-text {
     font-size: 3rem;
   }
+  .skill-box {
+    height: 7rem;
+    width: 7rem;
+  }
+  .img-box {
+    width: 4rem;
+  }
+  .css-img {
+    width: 4.5rem;
+  }
+  .js-img {
+    width: 3.2rem;
+  }
 }
 @media screen and (min-width: 850px) {
-  .nav-menu {
-    /* padding: 0 1rem; */
-  }
   ul li {
     margin: 0 0.8rem;
   }
@@ -40,11 +50,11 @@
     flex-direction: row;
   }
   .left-text {
-    font-size: 3rem;
+    font-size: 4rem;
     align-items: flex-start;
   }
   .avatar {
-    width: 40vw;
+    width: 30vw;
   }
   .about-container {
     padding: 1rem;
@@ -63,14 +73,34 @@
   .about-text {
     margin-left: 0.5rem;
   }
+  .project1 {
+    width: 40%;
+  }
+  .p1image {
+    width: 30vw;
+  }
 }
 @media screen and (min-width: 1100px) {
+  .hero {
+    display: flex;
+    justify-content: space-between;
+  }
   .left-text {
+    margin: 0 3rem;
     justify-content: center;
     align-items: flex-start;
-    font-size: 6rem;
+    font-size: 5rem;
   }
   .avatar {
     width: 35vw;
+  }
+  .project1 {
+    width: 50%;
+  }
+  .p1image-box {
+    padding: 1rem;
+  }
+  .p1image {
+    width: 25vw;
   }
 }
